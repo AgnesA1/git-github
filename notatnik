@@ -1,0 +1,68 @@
+ls - pokazuje wszystkie katalogi w aktualnym katalogu w ktorym jestem
+pwd - pokazuje aktualny katalog w ktorym jestem
+cd + nazwa pliku - wejcie do katalogu
+cat + nazwa pliku - wyswietlenie pliku 
+nazwa pliku - poczatek nazwy + tab
+cd .. - przechodze do glownego katalogu - katalog wyzej
+cd . - aktualny katalog
+cd ~ - przechode do katalogu domowego
+mkdir "nazwa katalogu nowego" - utworzenie katalogu
+man mkdir - pokazuje opcje 
+rm -r - usunicie katalogu
+rm - usuniecie pliku 
+cp - kopiowanie
+ls ~ - pokazuje wszystkie katalogi w katalogu domowym 
+Git push - wypchniecie zakomitowanego pliku
+~ katalog domowy
+clear - czyszczę ekran
+
+Terminal 
+
+Aby skopiowac plik do danego folderu musimy podac sciezke do pliku, czyli w jakim katalogu obecnie ten plik sie znajduje,( np. cp Documents/notatnik JARUS )
+cp plik katalog
+
+History - pokazuje historie wprowadzonych komend
+
+
+NANIESIENIE ZMIAN - GIT STATUS/ GIT ADD/ GIT COMMIT
+
+Applications	Downloads	Movies		Public
+Desktop		JARUS		Music		workspace
+Documents	Library		Pictures
+MacBook-Pro-Horhe:~ agnieszka$ cp Do
+Documents/ Downloads/ 
+MacBook-Pro-Horhe:~ agnieszka$ cp Documents/notatki\ github / Desktop/agnieszka_project
+cp: / is a directory (not copied).
+MacBook-Pro-Horhe:~ agnieszka$ cp Documents/notatki\ github Desktop/agnieszka_project/
+MacBook-Pro-Horhe:~ agnieszka$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+MacBook-Pro-Horhe:~ agnieszka$ cd Desktop/agnieszka_project/
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+	notatki github
+
+nothing added to commit but untracked files present (use "git add" to track)
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git add notatki\ github 
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   notatki github
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ 
