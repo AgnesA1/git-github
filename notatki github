@@ -1,0 +1,16 @@
+repozytorium - ukryty folder \REPO\ - .git
+(miejsce uporządkowanego przechowywania dokumentów, z których wszystkie przeznaczone są do udostępniania)
+"CLONE" - kopiowanie z repozytorium na swoj komputer
+"PULL" - kopiowanie zmian dokonanych w zdalnym projekcie na komputer
+"PUSH" - przeniesienie zmian do projektu, aby każdy mogł je zobaczyć
+
+GitHub to miejsce, w którym programiści mogą przechowywać swój kod publicznie za pomocą Git. Zazwyczja używa sie githuba, ale są rownież inne witryny z hostingiem projektu jak np.Bitbucked
+(Hosting – udostępnianie przez dostawcę usług internetowych zasobów serwerowni.)
+hostingowy serwis internetowy przeznaczony dla projektow programistycznych wykorzystujący system kontroli wersji GIT.ś
+
+Git – rozproszony system kontroli wersji. Stworzył go Linus Torvalds jako narzędzie wspomagające rozwój jądra Linux. Git stanowi wolne oprogramowanie i został opublikowany na licencji GNU GPL w wersji 2.
+
+System kontroli wersji (ang. version/revision control system) (VCS) – oprogramowanie służące do śledzenia zmian głównie w kodzie źródłowym oraz pomocy programistom w łączeniu zmian dokonanych w plikach przez wiele osób w różnym czasie./ zarządza zmianami w dokumentach, programach komputerowych, duzych witrynach internetowych
+
+
+Dlaczego używamy systemu kontroli wersji?
