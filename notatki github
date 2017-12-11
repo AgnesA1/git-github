@@ -14,3 +14,163 @@ System kontroli wersji (ang. version/revision control system) (VCS) – oprogram
 
 
 Dlaczego używamy systemu kontroli wersji?
+
+
+
+KOMITOWANIE W LOKALNYM REPO
+git add - dodajemy plik do indeksu, musimy wejść w dany folder
+git status
+gti commit -m".." - zawsze trzeba dodac wiadomość, np." dodanie pierwszego komitu w lokalnym repo"
+git add -A  - dodajemy więcej jak jeden plik
+git commit -a -m".." - komitujemy wiecej jak jeden plik
+git log 
+
+BRANCHING - ROZGAŁĘZIENIA
+git branch nazwa gałęzi - tworzymy nowa gałąź
+git checkout nazwa gałęźi - dostajemy się do niej i sprawdzamy; pojawi się komunikat: "switched to branch 'nazwa gałęźi'" - 
+
+MacBook-Pro-Horhe:~ agnieszka$ cp Documents/branch Desktop/agnieszka_project/
+MacBook-Pro-Horhe:~ agnieszka$ cd Desktop/agnieszka_project/
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git add Documents/ branch 
+fatal: pathspec 'Documents/' did not match any files
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git add Documents/ angielski
+fatal: pathspec 'Documents/' did not match any files
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git status
+On branch pierwszebranch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	branch
+
+nothing added to commit but untracked files present (use "git add" to track)
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git add branch
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git commit -m"making changes in firstbranch"
+[pierwszebranch 3536b01] making changes in firstbranch
+ Committer: Agnieszka <agnieszka@MacBook-Pro-Horhe.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 branch
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ ls
+branch		mlody.rtf	notatki github	notatnik
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git checkout master
+Switched to branch 'master'
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ ls
+mlody.rtf	notatki github	notatnik
+Terminal 
+
+
+
+NANIESIENIE ZMIAN - GIT STATUS/ GIT ADD/ GIT COMMIT
+Applications	Downloads	Movies		Public
+Desktop		JARUS		Music		workspace
+Documents	Library		Pictures
+MacBook-Pro-Horhe:~ agnieszka$ cp Do
+Documents/ Downloads/ 
+MacBook-Pro-Horhe:~ agnieszka$ cp Documents/notatki\ github / Desktop/agnieszka_project
+cp: / is a directory (not copied).
+MacBook-Pro-Horhe:~ agnieszka$ cp Documents/notatki\ github Desktop/agnieszka_project/
+MacBook-Pro-Horhe:~ agnieszka$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+MacBook-Pro-Horhe:~ agnieszka$ cd Desktop/agnieszka_project/
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git status
+On branch master
+
+
+MacBook-Pro-Horhe:~ agnieszka$ cp Documents/notatnik Desktop/agnieszka_project/
+MacBook-Pro-Horhe:~ agnieszka$ cp Documents/mlody.rtf Desktop/agnieszka_project/
+MacBook-Pro-Horhe:~ agnieszka$ cd Desktop/agnieszka_project/
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+	mlody.rtf
+	notatnik
+
+nothing added to commit but untracked files present (use "git add" to track)
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git add -A
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   .DS_Store
+	new file:   mlody.rtf
+	new file:   notatnik
+
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ 
+
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+	notatki github
+
+nothing added to commit but untracked files present (use "git add" to track)
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git add notatki\ github 
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   notatki github
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ 
+
+
+SCALANIE - MERGING
+git merge - scalanie; zawsze trzeba powrocić do Mastera jeśli chcemy scalić gałęzie
+git merge nazwa galezi ktora chcemy polaczyc z masterem
+
+MacBook-Pro-Horhe:~ agnieszka$ cd Desktop/agnieszka_project/
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git checkout master
+A	nauka
+Already on 'master'
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ ls
+galazpierwsza	mlody.rtf	nauka		notatki github	notatnik
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git checkout grugagalaz
+Switched to branch 'grugagalaz'
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ ls
+mlody.rtf	nauka		notatki github	notatnik
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ 
+
+PRZERZUCANIE - REBASING  
+łączenie pracy pomiędzy rożnymi gałęziami 
+można go używać do liniwej sekwencji zatwierdzeń
+git rebase nazwa galezi/master
+
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: dodanie pliku
+Applying: adding for rebasing
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git checkout master
+Switched to branch 'master'
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ git rebase grugagalaz
+First, rewinding head to replay your work on top of it...
+Fast-forwarded master to grugagalaz.
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ ls
+galazpierwsza	nauka		nauka2		notatnik
+mlody.rtf	nauka1		notatki github
+MacBook-Pro-Horhe:agnieszka_project agnieszka$ 
